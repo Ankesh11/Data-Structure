@@ -1,18 +1,10 @@
 # Data-Structures
 
-This contains all the different data structure codes.
-
-All the codes are written in C++.
-
-Author
-------
-
-Ankesh Kumar
-
-All bugs and fixes can be sent to ankesh.kr144@gmail.com
+All the different data structure codes written in most efficient way.  
+Language used: C++
 
 Contents
-------
+---
 
 * [**Linked List**](https://github.com/Ankesh11/Data-Structure/tree/master/Linked%20List)  
     * [*Singly Linked List*](https://github.com/Ankesh11/Data-Structure/blob/master/Linked%20List/Singly%20Linked%20List.cpp)  
@@ -45,3 +37,17 @@ Contents
     * [*Radix Sort*](https://github.com/Ankesh11/Data-Structure/blob/master/Sorting/Radix%20Sort.cpp)  
     * [*Merge Sort*](https://github.com/Ankesh11/Data-Structure/blob/master/Sorting/Merge%20Sort.cpp)  
     * [*Quick Sort*](https://github.com/Ankesh11/Data-Structure/blob/master/Sorting/Quick%20Sort.cpp)
+
+Resources
+---
+
+1. CLRS Book(Introduction to Algorithm)
+2. Geeks for Geeks
+
+Contributor
+---
+
+[***Ankesh Kumar***](https://www.linkedin.com/in/ankesh-kumar-32b3a1b6/)  
+All bugs and fixes can be sent to ankesh.kr144@gmail.com
+
+
