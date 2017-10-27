@@ -1,7 +1,7 @@
 # Data-Structures
 
 All the different data structure codes written in most efficient way.  
-Language used: C++
+Language used: `C++`
 
 Contents
 ---
