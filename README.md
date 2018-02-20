@@ -48,6 +48,5 @@ Contributor
 ---
 
 [***Ankesh Kumar***](https://www.linkedin.com/in/ankesh-kumar-32b3a1b6/)  
-All bugs and fixes can be sent to ankesh.kr144@gmail.com
 
 
