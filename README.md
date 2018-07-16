@@ -39,7 +39,7 @@ Contents
     * [*Quick Sort*](https://github.com/Ankesh11/Data-Structure/blob/master/Sorting/Quick%20Sort.cpp)
     
 * [**Advance Data Structures**]()
-    * [*Disjoint Set*]()
+    * [*Disjoint Set*](https://github.com/Ankesh11/Data-Structure/tree/master/Advance%20Data%20Structures/Disjoint%20Set)  
 
 Resources
 ---
