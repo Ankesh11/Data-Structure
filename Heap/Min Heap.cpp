@@ -1,86 +1,107 @@
-#include<iostream>
-#include<string.h>
-#include<cstring>
-#define MAX 20
+#include <bits/stdc++.h>
 using namespace std;
-int N=-1;
-void percolate_up(int heap[],int val)
-{
-    N++;
-    heap[N]=val;
-    int c=N;
-    int p=(N-1)/2;
-    while(heap[p]>heap[c] && c>0){
-        int temp=heap[p];
-        heap[p]=heap[c];
-        heap[c]=temp;
-        c=p;
-        p=(p-1)/2;
-    }
+void swap(int &a,int &b){
+    int temp = a;
+    a = b;
+    b = temp;
 }
-int percolate_down(int heap[])
-{
-    int temp=heap[0];
-    heap[0]=heap[N];
-    N--;
-    int p=0,c1=(2*p)+1,c2=(2*p)+2;
-    if(heap[p]<=heap[c1] && heap[p]<=heap[c2])
+//Min Heap
+class min_heap{
+    int *heap;
+    int capacity;
+    int size;
+public:
+    min_heap(int capacity){
+        this->capacity = capacity;
+        size=0;
+        heap = new int[capacity];
+    }
+    min_heap(int arr[], int n){
+        size = n;
+        capacity = n;
+        heap = arr;
+        build_heap();
+    }
+    void build_heap(){
+        for(int i=(size-1)/2;i>=0;i--){
+            min_heapify(i);
+        }
+    }
+    int parent(int i){
+        return (i-1)/2;
+    }
+    int left_child(int i){
+        return 2*i+1;
+    }
+    int right_child(int i){
+        return 2*i+2;
+    }
+    void insert_key(int key){
+        if(size==capacity){
+            cout<<"Overflow!"<<endl;
+            return;
+        }
+        size++;
+        int i = size-1;
+        heap[i]=key;
+        while(i>0 && heap[parent(i)] > heap[i]){
+            swap(heap[parent(i)], heap[i]);
+            i = parent(i);
+        }
+    }
+    void min_heapify(int i){
+        int l = left_child(i);
+        int r = right_child(i);
+        int smallest = i;
+        if(l<size && heap[l]<heap[i])
+            smallest = l;
+        if(r<size && heap[r]<heap[l])
+            smallest = r;
+        if(smallest != i){
+            swap(heap[smallest], heap[i]);
+            min_heapify(smallest);
+        }
+    }
+    int get_min(){
+        if(size==0){
+            cout<<"Underflow";
+            return INT_MAX;
+        }
+        return heap[0];
+    }
+    int extract_min(){
+        if(size<=0)
+            return INT_MAX;
+        else if(size==1){
+            size--;
+            return heap[0];
+        }
+        int temp = heap[0];
+        heap[0] = heap[size-1];
+        size--;
+        min_heapify(0);
         return temp;
-    else{
-        while((heap[p]>heap[c1] || heap[p]>heap[c2]) && c1<=N){
-            if(heap[c1]<heap[c2]){
-                int temp=heap[c1];
-                heap[c1]=heap[p];
-                heap[p]=temp;
-                p=c1;
-                c1=(2*p)+1;
-                c2=(2*p)+2;
-            }
-            else{
-                int temp=heap[c2];
-                heap[c2]=heap[p];
-                heap[p]=temp;
-                p=c2;
-                c1=(2*p)+1;
-                c2=(2*p)+2;
-            }
+    }
+    void decrease_key(int i, int newkey){
+        heap[i] = newkey;
+        while(i!=0 && heap[parent(i)] > heap[i]){
+            swap(heap[parent(i)], heap[i]);
+            i = parent(i);
         }
     }
-    return temp;
-}
-void display(int heap[])
-{
-    for(int i=0;i<=N;i++)
-        cout<<heap[i]<<"  ";
-}
-int main()
-{
-    int heap[20],val,opt;
-    do{
-        cout<<"\n---MIN HEAP---\n";
-        cout<<"1: Insert\n";
-        cout<<"2: Delete\n";
-        cout<<"3: Display\n";
-        cout<<"4: Exit\n";
-        cout<<"Enter your option: ";
-        cin>>opt;
-        switch(opt)
-        {
-        case 1:
-            cout<<"Enter data to insert: ";
-            cin>>val;
-            percolate_up(heap,val);
-            break;
-        case 2:
-            val=percolate_down(heap);
-            cout<<"Deleted value: "<<val<<endl;
-            break;
-        case 3:
-            display(heap);
-            break;
-        case 4:
-            break;
-        }
-    }while(opt!=4);
+    void delete_key(int i){
+        decrease_key(i, INT_MIN);
+        extract_min();
+    }
+    int get_size(){
+        return size;
+    }
+    void print(){
+        for(int i=0;i<size;i++)
+            cout<<heap[i]<<" ";
+    }
+};
+int main(){
+    //Create min_heap objects and use the function here
     return 0;
 }
