@@ -39,6 +39,9 @@ Contents
     * [*Quick Sort*](https://github.com/Ankesh11/Data-Structure/blob/master/Sorting/Quick%20Sort.cpp)
     
 * [**Advance Data Structures**]()
+    * [*AVL Tree*]()  
+    * [*Segment Tree*]()  
+    * [*Trie*]()  
     * [*Disjoint Set*](https://github.com/Ankesh11/Data-Structure/tree/master/Advance%20Data%20Structures/Disjoint%20Set)  
 
 Resources
