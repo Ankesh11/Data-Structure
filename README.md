@@ -48,7 +48,7 @@ Resources
 ---
 
 1. CLRS Book(Introduction to Algorithm)
-2. Geeks for Geeks
+2. GeeksforGeeks
 
 Contributor
 ---
